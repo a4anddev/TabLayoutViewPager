@@ -7,12 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import c.verbswithexample.tablayoutviewpager.Tabs.IconTabs;
 import c.verbswithexample.tablayoutviewpager.Tabs.TextTab;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Toolbar toolbar;
     private Button btnSimpletabs, btnScrollableTabs, btnIconTabs, btnCustomTextTabs;
+    private Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +39,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.btnSimpleTabs:
-                Intent intent = new Intent(this, TextTab.class);
-                startActivity(intent);
+               i = new Intent(this, TextTab.class);
+                startActivity(i);
 
                 break;
             case R.id.btnScrollableTabs:
                 break;
             case R.id.btnIcontabs:
+               i = new Intent(this, IconTabs.class);
+                startActivity(i);
                 break;
             case R.id.btnWithCustomView:
                 break;
