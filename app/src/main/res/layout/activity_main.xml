@@ -44,6 +44,14 @@
         <Button
 
             android:layout_margin="10dp"
+            android:id="@+id/btnTextIcon"
+            android:text="Text with Icon tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+
+            android:layout_margin="10dp"
             android:id="@+id/btnScrollableTabs"
             android:text="scrollable tabs"
             android:layout_width="match_parent"

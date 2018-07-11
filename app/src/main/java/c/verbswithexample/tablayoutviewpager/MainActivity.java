@@ -9,11 +9,12 @@ import android.widget.Button;
 
 import c.verbswithexample.tablayoutviewpager.Tabs.IconTabs;
 import c.verbswithexample.tablayoutviewpager.Tabs.TextTab;
+import c.verbswithexample.tablayoutviewpager.Tabs.TextWithIconTabs;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Toolbar toolbar;
-    private Button btnSimpletabs, btnScrollableTabs, btnIconTabs, btnCustomTextTabs;
+    private Button btnSimpletabs, btnScrollableTabs, btnIconTabs, btnCustomTextTabs, btnTextIcon;
     private Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     btnScrollableTabs = findViewById(R.id.btnScrollableTabs);
     btnIconTabs = findViewById(R.id.btnIcontabs);
     btnCustomTextTabs = findViewById(R.id.btnWithCustomView);
+        btnTextIcon = findViewById(R.id.btnTextIcon);
 
     btnCustomTextTabs.setOnClickListener(this);
     btnIconTabs.setOnClickListener(this);
     btnScrollableTabs.setOnClickListener(this);
     btnSimpletabs.setOnClickListener(this);
+        btnTextIcon.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                i = new Intent(this, TextTab.class);
                 startActivity(i);
 
+                break;
+
+            case R.id.btnTextIcon:
+                i = new Intent(this, TextWithIconTabs.class);
+                startActivity(i);
                 break;
             case R.id.btnScrollableTabs:
                 break;
