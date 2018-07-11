@@ -2,6 +2,7 @@ package c.verbswithexample.tablayoutviewpager.Tabs;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class TextTab extends AppCompatActivity{
     private List<String> titleList = new ArrayList<>();
     private ViewPager viewPager;
     private TextTabsAdapter textTabsAdapter;
+    private TabLayout tabLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +41,12 @@ public class TextTab extends AppCompatActivity{
         toolbar.setTitle("Simple Tabs Example");
 
         ViewPager viewPager = findViewById(R.id.viewPagerId);
+        tabLayout = findViewById(R.id.tabs);
+
         textTabsAdapter = new TextTabsAdapter(getSupportFragmentManager(), fragmentList, titleList);
 
         viewPager.setAdapter(textTabsAdapter);
+        tabLayout.setupWithViewPager(viewPager);
 
 
     }
